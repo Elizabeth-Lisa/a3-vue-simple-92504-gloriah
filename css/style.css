@@ -5,3 +5,30 @@
   1. Add Merienda Google font
 
 */
+.navbar{
+  left: 50%;
+}
+
+label{
+  width: 30%;
+}
+
+button{
+  width: 30%;
+  margin-left: 10%;
+}
+
+.card-header{
+}
+
+#user_details{
+  border: 2px solid blue;
+}
+
+#results{
+  border: 2px solid green;
+}
+
+#quick_links{
+  border: 2px solid black;
+}

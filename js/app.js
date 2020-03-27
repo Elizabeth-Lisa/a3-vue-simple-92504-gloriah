@@ -22,6 +22,9 @@
     methods: {
       //function to calculate weight
       calculate_weight: function(){
+        
+        //set additional weight to 0, to be incremented based oh height 
+        var additional_weight = 0;
 
         //male weight calculation here
         if (this.gender == 'male'){

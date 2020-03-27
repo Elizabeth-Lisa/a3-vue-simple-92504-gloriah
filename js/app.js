@@ -20,27 +20,35 @@ function calculate_weight(){
   if (user_gender == 'male'){
     ideal_weight = 50;
     additional_weight = 0;
-    
-    for (var i = user_height; i > 5; i++) {
-      additional_weight += 2.3
+
+    if (user_height > 5){
+      extre_height = user_height - 5;
+      additional_weight = 2.3 * extre_height;
+      console.log(extre_height);
+      }
     }
 
-    total = ideal_weight + additional_weight;
-
-    var results_span = document.getElementById('results')
-    results_span.innerHTML = total;
-  }
-
   else if (user_gender == 'female'){
-
     console.log("female");
   }
 
 
+  total = ideal_weight + additional_weight;
+
+  var results_span = document.getElementById('results')
+  results_span.innerHTML = total;
+
 }
 
+/*calculate_weight();
 
-/*function calculate_weight(){
+total = ideal_weight + additional_weight;
+
+var results_span = document.getElementById('results')
+results_span.innerHTML = total;
+
+
+function calculate_weight(){
 
   var user_name = document.getElementById('name').value;
   var user_age = document.getElementById('age').value;
@@ -52,7 +60,17 @@ function calculate_weight(){
   var results_span = document.getElementById('results')
   results_span.innerHTML = bmi;
 
+  for ( i = user_height; i > 5; i++) {
+    additional_weight += 2.3;
+  }
+
+
 
   }
+
+
+  for (int i = user_height; i > 5; i++) {
+    additional_weight += 2;
+      console.log("male");
 
 }*/

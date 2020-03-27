@@ -45,7 +45,6 @@
 
             //calculate additional Weight
             this.height = this.height/30.48;  //convert to feet
-            console.log(this.height);
             if (this.height > 5){
               var extre_height = this.height - 5;
               extre_height = extre_height * 12; // convert to inch

@@ -1,6 +1,5 @@
 /*
   @TODO : Add Script
-
   Details;
   1. Formula for calculating IDW by
       - Male:	 50.0 kg + 2.3 kg per inch per inch over 5 feet : B. J. Devine Formula (1974)
@@ -22,8 +21,8 @@
     methods: {
       //function to calculate weight
       calculate_weight: function(){
-        
-        //set additional weight to 0, to be incremented based oh height 
+
+        //set additional weight to 0, to be incremented based oh height
         var additional_weight = 0;
 
         //male weight calculation here

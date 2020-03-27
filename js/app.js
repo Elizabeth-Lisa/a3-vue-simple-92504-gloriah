@@ -9,68 +9,69 @@
   3. jQuery for modifying bound name result(color change)
   4. Enable tooltips
   */
+  var app = new Vue({
+    el: '#app', //bind elements and data
+    data: {
+      name: '',
+      age: '',
+      gender: '',
+      height: '',
+      result: '',
+    },
+    methods: {
+      //function to calculate weight
+      calculate_weight: function(){
 
-function calculate_weight(){
+        //male weight calculation here
+        if (this.gender == 'male'){
+          //set ideal weight to a constant of 50
+          var ideal_weight = 50;
 
-  var user_name = document.getElementById('name').value;
-  var user_age = document.getElementById('age').value;
-  var user_gender = document.getElementById('gender').value;
-  var user_height = document.getElementById('height').value;
+          //set additional weight to zero, to be incremented based on weight
+          var additional_weight = 0;
 
-  if (user_gender == 'male'){
-    ideal_weight = 50;
-    additional_weight = 0;
+          //calculate additional Weight
+          if (this.height > 5){
+            var extre_height = this.height - 5;
+            additional_weight = 2.3 * extre_height;
+            console.log(extre_height);
+            }
+          }
 
-    if (user_height > 5){
-      extre_height = user_height - 5;
-      additional_weight = 2.3 * extre_height;
-      console.log(extre_height);
-      }
-    }
+        //female weight calculation here
+        else if (this.gender == 'female'){
+          var ideal_weight = 49;
 
-  else if (user_gender == 'female'){
-    console.log("female");
-  }
+          //set additional weight to zero, to be incremented based on weight
+          var additional_weight = 0;
 
+          //calculate additional Weight
+          if (this.height > 5){
+            var extre_height = this.height - 5;
+            additional_weight = 1.7 * extre_height;
+            }
+        }
 
-  total = ideal_weight + additional_weight;
+        //calculate total weight
+        total = ideal_weight + additional_weight;
 
-  var results_span = document.getElementById('results')
-  results_span.innerHTML = total;
+        //print out/diplay the calculated weight
+        var results_span = document.getElementById('result');
+        results_span.innerHTML = total;
 
-}
+        //display name of the user
+        print_name.innerHTML = this.name + "'s Results"
 
-/*calculate_weight();
+      },
 
-total = ideal_weight + additional_weight;
+      //function to clear form
+      resetForm: function() {
+            this.name = '';
+            this.age = '';
+            this.gender = '';
+            this.height = '';
+        }
 
-var results_span = document.getElementById('results')
-results_span.innerHTML = total;
+    }//end of method
 
-
-function calculate_weight(){
-
-  var user_name = document.getElementById('name').value;
-  var user_age = document.getElementById('age').value;
-  var user_gender = document.getElementById('gender').value;
-  var user_height = document.getElementById('height').value;
-
-  bmi = user_height * user_age;
-
-  var results_span = document.getElementById('results')
-  results_span.innerHTML = bmi;
-
-  for ( i = user_height; i > 5; i++) {
-    additional_weight += 2.3;
-  }
-
-
-
-  }
-
-
-  for (int i = user_height; i > 5; i++) {
-    additional_weight += 2;
-      console.log("male");
-
-}*/
+  })

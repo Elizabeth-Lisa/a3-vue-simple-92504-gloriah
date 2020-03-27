@@ -29,6 +29,11 @@ button{
   border: 2px solid green;
 }
 
+#print_name{
+  background-color: green;
+  color: white;
+}
+
 #quick_links{
   border: 2px solid black;
 }

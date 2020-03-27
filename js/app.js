@@ -17,6 +17,7 @@
       gender: '',
       height: '',
       result: '',
+      range: '',
     },
     methods: {
       //function to calculate weight
@@ -31,12 +32,16 @@
           var additional_weight = 0;
 
           //calculate additional Weight
+          this.height = height/30.48; //convert cm to inch
+          
           if (this.height > 5){
             var extre_height = this.height - 5;
             additional_weight = 2.3 * extre_height;
             console.log(extre_height);
             }
           }
+
+
 
         //female weight calculation here
         else if (this.gender == 'female'){
@@ -57,10 +62,18 @@
 
         //print out/diplay the calculated weight
         var results_span = document.getElementById('result');
-        results_span.innerHTML = total;
+        results_span.innerHTML = "Ideal Weight: " + Math.trunc(total) + "kg";
+
+        //create limits for weight Range
+        var weight_range_lower = Math.trunc(total - 12);
+        var weight_range_upper = Math.trunc(total + 12);
+
+        //Didplay weight Range
+        var results_span = document.getElementById('range');
+        results_span.innerHTML = "Range: " + weight_range_lower + " kg - " + weight_range_upper +  " kg";
 
         //display name of the user
-        print_name.innerHTML = this.name + "'s Results"
+        print_name.innerHTML = this.name + "'s Results";
 
       },
 

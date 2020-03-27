@@ -5,8 +5,12 @@
   1. Add Merienda Google font
 
 */
+body {
+  font-family: 'Merienda', cursive;
+}
+
 .navbar{
-  left: 50%;
+  left: 40%;
 }
 
 label{
@@ -18,11 +22,20 @@ button{
   margin-left: 10%;
 }
 
+h2{
+  background-color: Clear;
+}
+
 .card-header{
 }
 
 #user_details{
   border: 2px solid blue;
+}
+
+#user_header{
+  background-color: blue;
+  color: white;
 }
 
 #results{

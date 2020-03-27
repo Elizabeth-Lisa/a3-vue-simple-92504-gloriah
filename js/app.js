@@ -35,7 +35,6 @@
             var extre_height = this.height - 5;
             extre_height = extre_height * 12; // convert to inch
             additional_weight = 2.3 * extre_height;
-            console.log(extre_height);
             }
           }
 

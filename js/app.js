@@ -32,15 +32,12 @@
           var additional_weight = 0;
 
           //calculate additional Weight
-          this.height = height/30.48; //convert cm to inch
-          
           if (this.height > 5){
             var extre_height = this.height - 5;
             additional_weight = 2.3 * extre_height;
             console.log(extre_height);
             }
           }
-
 
 
         //female weight calculation here
